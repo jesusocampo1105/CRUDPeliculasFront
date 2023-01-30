@@ -8,14 +8,14 @@ export const Form = (props) => {
     const [input, setInput] = useState('');
 
     const handleChange = e => {
-        setInput(e.target.value);
+        
+        console.log(input)
     }
 
     const handleSubmit = e => {
         // evita que se recargue la pagina y se pierdan los valores ingresados
         e.preventDefault();
-        setInput('');
-        props.onSubmit({
+        let x = {
             id: Math.floor(Math.random() * 10000),
             title: e.target.title.value,
             year: e.target.year.value,
@@ -23,16 +23,25 @@ export const Form = (props) => {
             lang: e.target.lang.value,
             date: e.target.date.value,
             country: e.target.country.value,
-        });
-
-        console.log(e.target.year.value, e.target.title.value )
-
+        }
+        console.log(x)
+        props.onSubmit(x);
+        e.target.title.value = ''
+        e.target.year.value = ''
+        e.target.time.value = ''
+        e.target.lang.value = ''
+        e.target.date.value = ''
+        e.target.country.value = ''
+        setInput('');
+        
+        
     }
 
   return (
+    
     <div>
         {/* Para obtener los datos y posteriormente enviarlos al servidor utilizamos onSubmit, capturando el evento de envío */}
-        <form className='movie-form' 
+        <form id='formulario' className='movie-form' name='formulario'
             onSubmit={handleSubmit}
         >
 
