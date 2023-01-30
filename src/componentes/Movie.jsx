@@ -34,8 +34,8 @@ export const Movie = ({movies, removeMovie, updateMovie}) => {
                     <th scope="col">Año</th>
                     <th scope="col">Tiempo</th>
                     <th scope="col">Lenguaje</th>
-                    <th scope="col">Fecha Lanzamiento</th>
                     <th scope="col">País</th>
+                    <th scope="col">Fecha Lanzamiento</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -43,15 +43,15 @@ export const Movie = ({movies, removeMovie, updateMovie}) => {
                 <tr>
                 <th scope="row">{movie.id}</th>
                     <td key={movie.id}>{movie.title}</td>
-                    <td>2019</td>
-                    <td>2h47min</td>
-                    <td>español</td>
-                    <td>22-10-2015</td>
-                    <td>Nunca jamas</td>
-                <th classname= 'lastrow' scope="row">
+                    <td>{movie.year}</td>
+                    <td>{movie.time}</td>
+                    <td>{movie.lang}</td>
+                    <td>{movie.country}</td>
+                    <td>{movie.date}</td>
+                <th scope="row">
                     <div className='edit' onClick={() => setEdit({id: movie.id, value: movie.title})}><AiFillEdit/></div>
                 </th>
-                <th classname= 'lastrow' scope="row">
+                <th scope="row">
                     <div className='trash' onClick={() => removeMovie(movie.id)}><BsFillTrashFill/></div>
                 </th>
                 </tr>

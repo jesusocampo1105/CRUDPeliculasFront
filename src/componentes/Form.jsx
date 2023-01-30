@@ -17,8 +17,18 @@ export const Form = (props) => {
         setInput('');
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            title: input
+            title: e.target.title.value,
+            year: e.target.year.value,
+            time: e.target.time.value,
+            lang: e.target.lang.value,
+            date: e.target.date.value,
+            country: e.target.country.value,
         });
+
+        console.log(e.target.year.value, e.target.title.value )
+
+        // const title = e.target.title.value;
+        // const year = e.target.year.value;
     }
 
   return (
@@ -34,7 +44,7 @@ export const Form = (props) => {
                 <input 
                     name='id'
                     className='mov-id'
- 
+                    
                 />
             </div>
             <div>
@@ -42,8 +52,8 @@ export const Form = (props) => {
                 <input 
                     name='title'
                     className='mov-tit'
-                    value={input}
                     onChange={handleChange}
+                    required
                 />
             </div>
             <div>
@@ -51,6 +61,8 @@ export const Form = (props) => {
                 <input 
                     name='year'
                     className='mov-year'
+                    onChange={handleChange}
+                    required
                 />
             </div>
             <div>
@@ -58,6 +70,8 @@ export const Form = (props) => {
                 <input 
                     name='time'
                     className='mov-time'
+                    onChange={handleChange}
+                    required
                 />
             </div>
             <div>
@@ -65,6 +79,8 @@ export const Form = (props) => {
                 <input 
                     name='lang'
                     className='mov-lang'
+                    onChange={handleChange}
+                    required
                 />
             </div>
             <div>
@@ -72,6 +88,7 @@ export const Form = (props) => {
                 <input 
                     name='country'
                     className='mov-country'
+                    onChange={handleChange}
                 />
             </div>
             <div>
@@ -79,6 +96,7 @@ export const Form = (props) => {
                 <input 
                     name='date'
                     className='mov-date'
+                    onChange={handleChange}
                 />
             </div>
             <div>
