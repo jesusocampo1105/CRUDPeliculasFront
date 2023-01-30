@@ -16,7 +16,7 @@ export const Form = (props) => {
         e.preventDefault();
         setInput('');
         props.onSubmit({
-            id: Math.floor(Math.random() * 10000),
+            id:  e.target.i_d.value,
             title: e.target.title.value,
             year: e.target.year.value,
             time: e.target.time.value,
@@ -27,8 +27,6 @@ export const Form = (props) => {
 
         console.log(e.target.year.value, e.target.title.value )
 
-        // const title = e.target.title.value;
-        // const year = e.target.year.value;
     }
 
   return (
@@ -42,9 +40,10 @@ export const Form = (props) => {
             <div>
                 <label>Id de la pelicula </label>
                 <input 
-                    name='id'
+                    name='i_d'
                     className='mov-id'
-                    
+                    onChange={handleChange}
+                    required
                 />
             </div>
             <div>
