@@ -46,7 +46,7 @@ export const Movie = ({movies, removeMovie, updateMovie}) => {
                     <td>2019</td>
                     <td>2h47min</td>
                     <td>español</td>
-                    <td>22-10-2010</td>
+                    <td>22-10-2015</td>
                     <td>Nunca jamas</td>
                 <th classname= 'lastrow' scope="row">
                     <div className='edit' onClick={() => setEdit({id: movie.id, value: movie.title})}><AiFillEdit/></div>
