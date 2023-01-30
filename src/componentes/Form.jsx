@@ -16,7 +16,7 @@ export const Form = (props) => {
         e.preventDefault();
         setInput('');
         props.onSubmit({
-            id:  e.target.i_d.value,
+            id: Math.floor(Math.random() * 10000),
             title: e.target.title.value,
             year: e.target.year.value,
             time: e.target.time.value,
@@ -40,10 +40,9 @@ export const Form = (props) => {
             <div>
                 <label>Id de la pelicula </label>
                 <input 
-                    name='i_d'
+                    name='id'
                     className='mov-id'
-                    onChange={handleChange}
-                    required
+                    
                 />
             </div>
             <div>
@@ -88,6 +87,7 @@ export const Form = (props) => {
                     name='country'
                     className='mov-country'
                     onChange={handleChange}
+                    required
                 />
             </div>
             <div>
@@ -96,6 +96,7 @@ export const Form = (props) => {
                     name='date'
                     className='mov-date'
                     onChange={handleChange}
+                    required
                 />
             </div>
             <div>
