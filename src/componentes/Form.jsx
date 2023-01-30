@@ -18,13 +18,13 @@ export const Form = (props) => {
     
     /*
     const handleChange = e => {
-        (e.target.value);
-    }*/
+        setInput(e.target.value);
+    }
 
     /*const handleSubmit = e => {
         // evita que se recargue la pagina y se pierdan los valores ingresados
         e.preventDefault();
-       // setInput('');
+        setInput('');
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
             title: e.target.title.value,
@@ -41,22 +41,11 @@ export const Form = (props) => {
         // const year = e.target.year.value;
     }*/
 
-    //Add Movie
-
-    const addMovie = async (e) =>{
-        e.preventDefault();
-        try {
-            const res = await axios.post(url+'/new/pelicula', {id: id, titulo: title, ano: year, tiempo: time, lenguaje: lang, fechaLanzamiento: date, pais: country});
-            console.log(res);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
   return (
+    
     <div>
         {/* Para obtener los datos y posteriormente enviarlos al servidor utilizamos onSubmit, capturando el evento de envío */}
-        <form className='movie-form' onSubmit={addMovie}>
+        <form className='movie-form' onSubmit={handleSubmit}>
 
             <h2>Inserte los datos correspondientes de la película a agregar:</h2>
             <div>
@@ -81,11 +70,11 @@ export const Form = (props) => {
             </div>
             <div>
                 <label>País de la pelicula </label>
-                <input name='country' className='mov-country' onChange={e=>{setCountry(e.target.value)}} value={country}/>
+                <input name='country' className='mov-country' onChange={e=>{setCountry(e.target.value)}} value={country} required/>
             </div>
             <div>
                 <label>Fecha de Lanzamiento </label>
-                <input  name='date' className='mov-date' onChange={e=>{setDate(e.target.value)}} value={date}/>
+                <input name='date' className='mov-date' onChange={e=>{setDate(e.target.value)}} value={date} required/>
             </div>
             <div>
                 <button type='submit' className='add-btn'>Agregar</button>
