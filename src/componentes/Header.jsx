@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
+import Logo from "../assets/Logo.png"
 
-const Header = () => {
+export const Header = () => {
     return (
       <header className="header-container">
         <div className="logo">
-          <img src="/Logo.png" alt="Logo" />
+          <img src={Logo} alt="Logo" />
         </div>
         <nav className="menu">
           <ul>
@@ -17,5 +18,3 @@ const Header = () => {
       </header>
     );
   };
-  
-  export default Header;

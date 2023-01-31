@@ -2,18 +2,18 @@ import './App.css';
 import { Route, Routes } from 'react-router';
 import { Form } from './componentes/Form';
 import { Table } from './componentes/Table';
-import  Footer from "./componentes/Footer";
-import Header from './componentes/Header';
+import { Footer1 } from './componentes/Footer1';
+import { Header } from './componentes/Header';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Form/>}/>
-        <Route path='/Table' element={<Table/>}/>
-        <Route path='/Footer' element={Footer}/>
-        <Route path='/' element={<Header/>}/>
-      </Routes>
+      <Header/>
+      <Form/>
+      <Footer1/>
     </div>
   );
 }
