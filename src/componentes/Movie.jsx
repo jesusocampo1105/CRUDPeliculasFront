@@ -3,7 +3,7 @@ import { Form } from 'react-router-dom';
 import axios from 'axios';
 import { BsFillTrashFill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
-let url = "http://localhost:3030";
+let url = "http://localhost:3000";
 
 export const Movie = () => {
     /*const [edit, setEdit] = useState({
@@ -86,7 +86,7 @@ export const Movie = () => {
 
     return (
         <div>
-            <table>
+            <table className='movies-table' >
                 <thead>
                     <tr>
                         <th>id</th>
@@ -110,10 +110,10 @@ export const Movie = () => {
                                 <td>{movie.pais}</td>
                                 <td>{movie.fechalanzamiento}</td>
                                 <th scope="row">
-                                    <div className='edit'><AiFillEdit /></div>
+                                    <div className='edit'><AiFillEdit className='edit-i' /></div>
                                 </th>
                                     <th scope="row">
-                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill /></div>
+                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill className='trash-i' /></div>
                                  </th>
                             </tr>
                         </tbody>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-let url = "http://localhost:3030";
+let url = "http://localhost:3000";
 
 
 export const Form = () => {
@@ -45,6 +45,13 @@ export const Form = () => {
 
     const addMovie = async (e) =>{
         e.preventDefault();
+            setId('');
+            setTitle('');
+            setYear('');
+            setTime('');
+            setLang('');
+            setDate('');
+            setCountry('');
         try {
             const res = await axios.post(url+'/new/pelicula', {id: id, titulo: title, ano: year, tiempo: time, lenguaje: lang, fechaLanzamiento: date, pais: country});
             console.log(res);
