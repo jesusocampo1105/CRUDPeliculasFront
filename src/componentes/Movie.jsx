@@ -24,6 +24,7 @@ export const Movie = () => {
     }*/
 
     const [listMovies, setListMovies] = useState([]);
+    const [isUpdating, setIsUpdating] = useState('');
 
     //Mostrar elementos
     useEffect(() => {
@@ -38,12 +39,21 @@ export const Movie = () => {
         getMovieList();
     }, []);
 
+    //Eliminar elementos
+    const deleteMovie = async (id) =>{
+        try {
+            const res = await axios.delete(url+`/new/pelicula/${id}`);
+            console.log(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    //Actualizar elementos
 
     return (
         <div>
             <table>
-
-
                 <thead>
                     <tr>
                         <th>id</th>
@@ -55,19 +65,26 @@ export const Movie = () => {
                         <th>Fecha Lanzamiento</th>
                     </tr>
                 </thead>
-                {listMovies.map(movie => (
-                    <tbody>
-                        <tr>
-                            <td>{movie.id}</td>
-                            <td>{movie.titulo}</td>
-                            <td>{movie.ano}</td>
-                            <td>{movie.tiempo}</td>
-                            <td>{movie.lenguaje}</td>
-                            <td>{movie.pais}</td>
-                            <td>{movie.fechalanzamiento}</td>
-                        </tr>
-                    </tbody>
-                ))
+                {
+                    listMovies.map(movie => (
+                        <tbody>
+                            <tr>
+                                <td>{movie.id}</td>
+                                <td>{movie.titulo}</td>
+                                <td>{movie.ano}</td>
+                                <td>{movie.tiempo}</td>
+                                <td>{movie.lenguaje}</td>
+                                <td>{movie.pais}</td>
+                                <td>{movie.fechalanzamiento}</td>
+                                <th scope="row">
+                                    <div className='edit'><AiFillEdit /></div>
+                                </th>
+                                    <th scope="row">
+                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill /></div>
+                                 </th>
+                            </tr>
+                        </tbody>
+                    ))
                 }
             </table>
 
