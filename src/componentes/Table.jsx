@@ -31,10 +31,7 @@ export const Table = () => {
 
   return (
     <div className='table-cont'>
-
-        <h2>Peliculas registradas</h2>
         <Form onSubmit={addMovie}></Form>
-        <button><Link to='/'>VER FORM</Link></button>
         <Movie movies={movies} removeMovie={removeMovie} updateMovie = {updateMovie}></Movie>
     </div>
   )

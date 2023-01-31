@@ -85,8 +85,10 @@ export const Movie = () => {
     )
 
     return (
-        <div>
+        <div className='movies-table-cont'>
+            <h2>Películas agregadas</h2>
             <table className='movies-table' >
+                
                 <thead>
                     <tr>
                         <th>id</th>
@@ -96,6 +98,8 @@ export const Movie = () => {
                         <th>Lenguaje</th>
                         <th>País</th>
                         <th>Fecha Lanzamiento</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 {

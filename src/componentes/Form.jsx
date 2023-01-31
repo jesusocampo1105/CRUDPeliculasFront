@@ -69,7 +69,7 @@ export const Form = () => {
             <h2>Inserte los datos correspondientes de la película a agregar:</h2>
             <div>
                 <label>Id de la pelicula </label>
-                <input name='id' className='mov-id' onChange={e =>{setId(e.target.value)}} value={id}/>
+                <input name='id' className='mov-id' onChange={e =>{setId(e.target.value)}} value={id} required/>
             </div>
             <div>
                 <label>Título de la pelicula </label>
@@ -93,15 +93,13 @@ export const Form = () => {
             </div>
             <div>
                 <label>Fecha de Lanzamiento </label>
-                <input name='date' className='mov-date' onChange={e=>{setDate(e.target.value)}} value={date} required/>
+                <input name='date' className='mov-date' onChange={e=>{setDate(e.target.value)}} value={date}/>
             </div>
             <div>
                 <button type='submit' className='add-btn'>Agregar</button>
             </div>
 
         </form>
-
-        <button><Link to='/Table'>VER TABLA</Link></button>
     </div>
   )
 }
