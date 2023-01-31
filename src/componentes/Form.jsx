@@ -6,7 +6,7 @@ import axios from 'axios';
 let url = "http://localhost:3030";
 
 
-export const Form = (props) => {
+export const Form = () => {
 
     const [id, setId] = useState('');    
     const [title, setTitle] = useState('');
@@ -41,11 +41,23 @@ export const Form = (props) => {
         // const year = e.target.year.value;
     }*/
 
+    //Add Movie
+
+    const addMovie = async (e) =>{
+        e.preventDefault();
+        try {
+            const res = await axios.post(url+'/new/pelicula', {id: id, titulo: title, ano: year, tiempo: time, lenguaje: lang, fechaLanzamiento: date, pais: country});
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
   return (
     
     <div>
         {/* Para obtener los datos y posteriormente enviarlos al servidor utilizamos onSubmit, capturando el evento de envío */}
-        <form className='movie-form' onSubmit={handleSubmit}>
+        <form className='movie-form' onSubmit={addMovie}>
 
             <h2>Inserte los datos correspondientes de la película a agregar:</h2>
             <div>
