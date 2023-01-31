@@ -25,6 +25,13 @@ export const Movie = () => {
 
     const [listMovies, setListMovies] = useState([]);
     const [isUpdating, setIsUpdating] = useState('');
+    const [updateId, setUpdateId] = useState('');    
+    const [updateTitle, setUpdateTitle] = useState('');
+    const [updateYear, setUpdateYear] = useState('');
+    const [updateTime, setUpdateTime] = useState('');
+    const [updateLang, setUpdateLang] = useState('');
+    const [updateDate, setUpdateDate] = useState('');
+    const [updateCountry, setUpdateCountry] = useState('');
 
     //Mostrar elementos
     useEffect(() => {
@@ -50,6 +57,32 @@ export const Movie = () => {
     }
 
     //Actualizar elementos
+    const updateMovie = async (e) =>{
+        e.preventDefault();
+        try {
+            const res = await axios.put(url+`/new/pelicula/${isUpdating}`, {id: updateId, titulo: updateTitle, ano: updateYear, tiempo: updateTime, lenguaje: updateLang, 
+                fechalanzamiento: updateDate, pais: updateCountry});
+        } catch (error) {
+            
+        }
+
+    }
+
+    //Renderizar elementos a modificar
+    const renderUpdateMovie = () =>(
+        <div>
+            <form onSubmit={(e)=>{updateMovie(e)}}>
+                <input type="text" placeholder="Nuevo Id" onChange={e=>{setUpdateId(e.target.value)}} value={updateId}/>
+                <input type="text" placeholder="Nuevo Título" onChange={e=>{setUpdateTitle(e.target.value)}} value={updateTitle}/>
+                <input type="text" placeholder="Nuevo Año" onChange={e=>{setUpdateYear(e.target.value)}} value={updateYear}/>
+                <input type="text" placeholder="Nuevo Tiempo" onChange={e=>{setUpdateTime(e.target.value)}} value={updateTime}/>
+                <input type="text" placeholder="Nuevo Lenguaje" onChange={e=>{setUpdateLang(e.target.value)}} value={updateLang}/>
+                <input type="text" placeholder="Nuevo País" onChange={e=>{setUpdateCountry(e.target.value)}} value={updateCountry}/>
+                <input type="text" placeholder="Nuevo FechaLanzamiento" onChange={e=>{setUpdateDate(e.target.value)}} value={updateDate}/>
+                <button type='submit'>Actualizar</button>
+            </form>
+        </div>
+    )
 
     return (
         <div>
