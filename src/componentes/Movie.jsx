@@ -25,7 +25,7 @@ export const Movie = ({movies, removeMovie, updateMovie}) => {
   return (
   movies.map((movie, index) =>(
     <div key={index}>  
-        <table summary="">
+        <table className = 'movies-table' summary="">
             
             <thead>
                 <tr>
@@ -49,10 +49,10 @@ export const Movie = ({movies, removeMovie, updateMovie}) => {
                     <td>{movie.country}</td>
                     <td>{movie.date}</td>
                 <th scope="row">
-                    <div className='edit' onClick={() => setEdit({id: movie.id, value: movie.title})}><AiFillEdit/></div>
+                    <div className='edit' onClick={() => setEdit({id: movie.id, value: movie.title})}><AiFillEdit className='edit-i'/></div>
                 </th>
                 <th scope="row">
-                    <div className='trash' onClick={() => removeMovie(movie.id)}><BsFillTrashFill/></div>
+                    <div className='trash' onClick={() => removeMovie(movie.id)}><BsFillTrashFill className='trash-i'/></div>
                 </th>
                 </tr>
             </tbody>
