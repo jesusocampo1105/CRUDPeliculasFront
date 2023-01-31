@@ -11,6 +11,10 @@ body{
   background: linear-gradient(to top, rgba(2,0,36,1) 0%, rgba(168,0,0,1) 100%);
 }
 
+.app{
+  width: fit-content;
+}
+
 /* Form------------------------------------------- */
 
 .movie-form{

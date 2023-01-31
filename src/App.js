@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router';
 import { Form } from './componentes/Form';
 import { Table } from './componentes/Table';
-import { Footer1 } from './componentes/Footer1';
+import { Footer } from './componentes/Footer';
 import { Header } from './componentes/Header';
 
 
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Header/>
       <Form/>
-      <Footer1/>
+      <Footer/>
     </div>
   );
 }

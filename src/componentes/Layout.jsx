@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router';
 import { Form } from 'react-router-dom';
 import { Table } from 'reactstrap';
-import { Footer1 } from './Footer1';
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 const Layout = () => {
@@ -12,7 +12,7 @@ const Layout = () => {
     <Route path='/' element={<Header/>}/>
       <Route path='/Form' element={<Form/>}/>
       <Route path='/Table' element={<Table/>}/>
-      <Route path='/' element={<Footer1/>}/>
+      <Route path='/' element={<Footer/>}/>
       <Route path='*' element={<Form/>}/>
 
     </Routes>
