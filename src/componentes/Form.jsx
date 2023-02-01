@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -15,12 +15,25 @@ export const Form = () => {
     const [lang, setLang] = useState('');
     const [date, setDate] = useState('');
     const [country, setCountry] = useState('');
+    const [listMovies, setListMovies] = useState([]);
     
+    function setAll(){
+        return(
+            setId(''),
+            setTitle(''),
+            setYear(''),
+            setTime(''),
+            setLang(''),
+            setDate(''),
+            setCountry('')
+        );
+    }
+
     /*
     const handleChange = e => {
         setInput(e.target.value);
     }
-
+    
     /*const handleSubmit = e => {
         // evita que se recargue la pagina y se pierdan los valores ingresados
         e.preventDefault();
@@ -42,18 +55,18 @@ export const Form = () => {
     }*/
 
     //Add Movie
-
     const addMovie = async (e) =>{
         e.preventDefault();
         try {
             const res = await axios.post(url+'/new/pelicula', {id: id, titulo: title, ano: year, tiempo: time, lenguaje: lang, fechaLanzamiento: date, pais: country});
             //setListMovies(prev =>[...prev, res.data]);
             console.log(res);
+            setAll();
         } catch (error) {
             console.log(error);
         }
     }
-
+   
   return (
     
     <div>
