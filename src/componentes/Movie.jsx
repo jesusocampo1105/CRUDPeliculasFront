@@ -71,8 +71,8 @@ export const Movie = () => {
             const updatedYearMovie = listMovies[updateMovieIndex].ano= updateYear;
             const updatedTimeMovie = listMovies[updateMovieIndex].tiempo= updateTime;
             const updatedLangMovie = listMovies[updateMovieIndex].lenguaje= updateLang;
-            const updatedDateMovie = listMovies[updateMovieIndex].fechalanzamiento= updateDate;
             const updatedCountryMovie = listMovies[updateMovieIndex].pais= updateCountry;
+            const updatedDateMovie = listMovies[updateMovieIndex].fechalanzamiento= updateDate;            
             setUpdateId('');
             setIsUpdating('');
         } catch (error) {
