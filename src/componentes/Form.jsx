@@ -54,6 +54,7 @@ export const Form = () => {
             setCountry('');
         try {
             const res = await axios.post(url+'/new/pelicula', {id: id, titulo: title, ano: year, tiempo: time, lenguaje: lang, fechaLanzamiento: date, pais: country});
+            //setListMovies(prev =>[...prev, res.data]);
             console.log(res);
         } catch (error) {
             console.log(error);

@@ -50,6 +50,8 @@ export const Movie = () => {
     const deleteMovie = async (id) =>{
         try {
             const res = await axios.delete(url+`/new/pelicula/${id}`);
+            const newListMovies = listMovies.filter(mov => mov._id !== id);
+            setListMovies(newListMovies);
             console.log(res.data);
         } catch (error) {
             console.log(error);
@@ -61,7 +63,18 @@ export const Movie = () => {
         e.preventDefault();
         try {
             const res = await axios.put(url+`/new/pelicula/${isUpdating}`, {id: updateId, titulo: updateTitle, ano: updateYear, tiempo: updateTime, lenguaje: updateLang, 
-                fechalanzamiento: updateDate, pais: updateCountry});
+        fechalanzamiento: updateDate, pais: updateCountry});
+            console.log(res.data);
+            const updateMovieIndex = listMovies.findIndex(movie => movie._id ===isUpdating);
+            const updatedIdMovie = listMovies[updateMovieIndex].id= updateId;            
+            const updatedTitleMovie = listMovies[updateMovieIndex].titulo= updateTitle;
+            const updatedYearMovie = listMovies[updateMovieIndex].ano= updateYear;
+            const updatedTimeMovie = listMovies[updateMovieIndex].tiempo= updateTime;
+            const updatedLangMovie = listMovies[updateMovieIndex].lenguaje= updateLang;
+            const updatedCountryMovie = listMovies[updateMovieIndex].pais= updateCountry;
+            const updatedDateMovie = listMovies[updateMovieIndex].fechalanzamiento= updateDate;            
+            setUpdateId('');
+            setIsUpdating('');
         } catch (error) {
             
         }
@@ -104,8 +117,11 @@ export const Movie = () => {
                 </thead>
                 {
                     listMovies.map(movie => (
-                        <tbody>
-                            <tr>
+                        <tbody>{
+                                isUpdating === movie._id
+                                ? renderUpdateMovie()
+                                :
+                            <tr>                                                                
                                 <td>{movie.id}</td>
                                 <td>{movie.titulo}</td>
                                 <td>{movie.ano}</td>
@@ -114,13 +130,13 @@ export const Movie = () => {
                                 <td>{movie.pais}</td>
                                 <td>{movie.fechalanzamiento}</td>
                                 <th scope="row">
-                                    <div className='edit'><AiFillEdit className='edit-i' /></div>
+                                    <div className='edit' onClick={()=>{setIsUpdating(movie._id)}}><AiFillEdit /></div>
                                 </th>
                                     <th scope="row">
-                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill className='trash-i' /></div>
-                                 </th>
+                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill /></div>
+                                 </th>                                
                             </tr>
-                        </tbody>
+                        }</tbody>
                     ))
                 }
             </table>
