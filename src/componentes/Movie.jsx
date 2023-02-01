@@ -3,7 +3,7 @@ import { Form } from 'react-router-dom';
 import axios from 'axios';
 import { BsFillTrashFill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
-let url = "http://localhost:3030";
+let url = "http://localhost:3000";
 
 export const Movie = () => {
     /*const [edit, setEdit] = useState({
@@ -72,7 +72,8 @@ export const Movie = () => {
             const updatedTimeMovie = listMovies[updateMovieIndex].tiempo= updateTime;
             const updatedLangMovie = listMovies[updateMovieIndex].lenguaje= updateLang;
             const updatedCountryMovie = listMovies[updateMovieIndex].pais= updateCountry;
-            const updatedDateMovie = listMovies[updateMovieIndex].fechalanzamiento= updateDate;            
+            const updatedDateMovie = listMovies[updateMovieIndex].fechalanzamiento= updateDate;  
+            
             setUpdateId('');
             setIsUpdating('');
         } catch (error) {
@@ -83,15 +84,15 @@ export const Movie = () => {
 
     //Renderizar elementos a modificar
     const renderUpdateMovie = () =>(
-        <div>
+        <div  className='prueba'>
             <form onSubmit={(e)=>{updateMovie(e)}}>
-                <input type="text" placeholder="Nuevo Id" onChange={e=>{setUpdateId(e.target.value)}} value={updateId}/>
-                <input type="text" placeholder="Nuevo Título" onChange={e=>{setUpdateTitle(e.target.value)}} value={updateTitle}/>
-                <input type="text" placeholder="Nuevo Año" onChange={e=>{setUpdateYear(e.target.value)}} value={updateYear}/>
-                <input type="text" placeholder="Nuevo Tiempo" onChange={e=>{setUpdateTime(e.target.value)}} value={updateTime}/>
-                <input type="text" placeholder="Nuevo Lenguaje" onChange={e=>{setUpdateLang(e.target.value)}} value={updateLang}/>
-                <input type="text" placeholder="Nuevo País" onChange={e=>{setUpdateCountry(e.target.value)}} value={updateCountry}/>
-                <input type="text" placeholder="Nuevo FechaLanzamiento" onChange={e=>{setUpdateDate(e.target.value)}} value={updateDate}/>
+                <input type="text" placeholder="N-Id" onChange={e=>{setUpdateId(e.target.value)}} value={updateId}/>
+                <input type="text" placeholder="N-Título" onChange={e=>{setUpdateTitle(e.target.value)}} value={updateTitle}/>
+                <input type="text" placeholder="N-Año" onChange={e=>{setUpdateYear(e.target.value)}} value={updateYear}/>
+                <input type="text" placeholder="N-Tiempo" onChange={e=>{setUpdateTime(e.target.value)}} value={updateTime}/>
+                <input type="text" placeholder="N-Lenguaje" onChange={e=>{setUpdateLang(e.target.value)}} value={updateLang}/>
+                <input type="text" placeholder="N-País" onChange={e=>{setUpdateCountry(e.target.value)}} value={updateCountry}/>
+                <input type="text" placeholder="N-Fecha" onChange={e=>{setUpdateDate(e.target.value)}} value={updateDate}/>
                 <button type='submit'>Actualizar</button>
             </form>
         </div>
@@ -130,10 +131,10 @@ export const Movie = () => {
                                 <td>{movie.pais}</td>
                                 <td>{movie.fechalanzamiento}</td>
                                 <th scope="row">
-                                    <div className='edit' onClick={()=>{setIsUpdating(movie._id)}}><AiFillEdit /></div>
+                                    <div className='edit' onClick={()=>{setIsUpdating(movie._id)}}><AiFillEdit className='edit-i'/></div>
                                 </th>
                                     <th scope="row">
-                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill /></div>
+                                <div className='trash' onClick={()=> {deleteMovie(movie._id)}}><BsFillTrashFill className='trash-i'/></div>
                                  </th>                                
                             </tr>
                         }</tbody>

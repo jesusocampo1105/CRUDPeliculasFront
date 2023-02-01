@@ -184,3 +184,70 @@ color: #00a800;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
+
+/* --------Actualizacion---------------- */
+
+.prueba{
+  background-color: #a80000;
+  width: 900px;
+}
+
+.prueba form input{
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #bfd5bf;
+
+}
+
+.prueba form input:nth-child(1) {
+  width: 8%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(2) {
+  width: 25%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(3) {
+  width: 5%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(4) {
+  width: 10%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(5) {
+  width: 10%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(6) {
+  width: 14%;
+  text-align: center;
+  padding: 10px 0px;
+}
+.prueba form input:nth-child(7) {
+  width: 17%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.prueba form input:nth-child(7) {
+  width: 20%;
+  text-align: center;
+  padding: 10px 0px;
+}
+.prueba button {
+  width: 8%;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #00a800;
+  color: white;
+}
