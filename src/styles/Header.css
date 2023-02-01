@@ -1,0 +1,25 @@
+.header-container {
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+.header{
+  display: flex;
+  justify-content: space-around;
+}
+.header-1,
+.header-2,
+.header-3
+{
+  display: flex;
+}
+
+.header p{
+  align-self: center;
+}
+
+
+
+@media (max-width: 767px) {
+
+}
