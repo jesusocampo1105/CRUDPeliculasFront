@@ -3,7 +3,7 @@ import { Form } from 'react-router-dom';
 import axios from 'axios';
 import { BsFillTrashFill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
-let url = "http://localhost:3000";
+let url = "http://localhost:3030";
 
 export const Movie = () => {
     /*const [edit, setEdit] = useState({
