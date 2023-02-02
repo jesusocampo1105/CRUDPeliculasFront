@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BsFillTrashFill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
-let url = "http://localhost:3000";
+let url = "https://crud-peliculas-back.vercel.app";
 
 export const Movie = () => {
     /*const [edit, setEdit] = useState({

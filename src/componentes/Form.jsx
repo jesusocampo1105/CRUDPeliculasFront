@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-let url = "http://localhost:3000";
+let url = "https://crud-peliculas-back.vercel.app";
 
 
 export const Form = () => {
